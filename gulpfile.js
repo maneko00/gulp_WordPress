@@ -22,7 +22,7 @@ const imageminSvgo = require("imagemin-svgo");
 const srcBase = './_static/src';
 const serverBase = './_server';
 const distBase = './_static/dist';
-const wp_Base = '../dev_grad/wp-content/themes/template_01';
+const wp_Base = '../dev/wp-content/themes/template_01';
 
 
 const srcPath = {
