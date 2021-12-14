@@ -1,0 +1,189 @@
+@use '../../global' as *;
+
+.bl_story_top {
+  color: #fff;
+  position: relative;
+  background-color: #000;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 0;
+      @include background(
+        $image: url(../img/story1.png),
+        $position-y: top
+      );
+    @include mq("sm") {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+  .ly_inner {
+    position: relative;
+  }
+}
+
+.bl_storyPage {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &_ttl {
+    width: calc(100% / 2 - 30px * 1 / 2);
+    text-align: center;
+  }
+
+  &_txt {
+    flex: 1;
+    @include fzRem($size:12, $height:21);
+  }
+}
+
+.bl_jumbotron.story {
+  background: none;
+}
+
+.bl_story2 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $color_white;
+  position: relative;
+  background-color: #000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 0;
+    @include mq("sm") {
+      content: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &_inner {
+    position: relative;
+    z-index: 1;
+    max-width: 810px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md") {
+      max-width: 690px;
+      padding-right: $pd_x_md;
+      padding-left: $pd_x_md;
+    }
+    @include mq("sm") {
+      max-width: 510px;
+      padding-right: $pd_x_sm;
+      padding-left: $pd_x_sm;
+    }
+  }
+
+  &_cont {
+    margin-top: 20px;
+    display: flex;
+    @include mq("sm") {
+      display: block;
+    }
+  }
+
+  &_txt {
+    width: 390px;
+    @include fzRem($size: 12, $height: 21);
+
+    @include mq("sm") {
+      width: 100%;
+    }
+  }
+
+  &_footer {
+    text-align: right;
+    > .el_btn {
+      padding: 10px 26px;
+    }
+
+    @include mq("sm") {
+      text-align: center;
+    }
+  }
+}
+
+.bl_bg2 {
+  @include mq("sm") {
+    display: block;
+    height: 300px;
+    margin-bottom: 50px;
+    width: 100%;
+    @include background($image: url(../img/story2.png));
+  }
+}
+.bl_bg3 {
+  @include mq("sm") {
+    display: block;
+    height: 400px;
+    margin-bottom: 50px;
+    width: 100%;
+    @include background($image: url(../img/story3.png));
+  }
+}
+.bl_bg4 {
+  @include mq("sm") {
+    display: block;
+    height: 400px;
+    margin-bottom: 50px;
+    width: 100%;
+    @include background($image: url(../img/story4.png));
+  }
+}
+
+.bl_story2.bg2::before {
+  right: 0;
+  @include background(
+    $image: url(../img/story2.png),
+    $size: 110%,
+    $position-y: top
+  );
+}
+.bl_story2.bg3::before {
+  @include background($image: url(../img/story3.png), $size: 100%);
+}
+.bl_story2.bg4::before {
+  right: 0;
+  @include background($image: url(../img/story4.png), $size: 70%);
+}
+.bl_story2_cont__rev {
+  justify-content: flex-end;
+}

@@ -1,0 +1,26 @@
+
+.breadcrumb {
+	color: #333;
+	font-size: 12px;
+	margin-bottom: 14px;
+  
+  .home::before {
+    content: "\f015";
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  
+  i {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,168 @@
+@use '../../global' as *;
+
+.ly_header .bl_tabNav {
+  @include mq("lg") {
+    padding-top: 1.2rem;
+  }
+
+  @include mq("sm") {
+    display: none;
+  }
+
+    > ul {
+      display: flex;
+      justify-content: center;
+      
+      > *:last-child {
+        margin-right: 0;
+      }
+
+      > li {
+        margin-right: 45px;
+        text-align: center;
+      }
+    }
+
+    &_link {
+      display: inline-block;
+      color: inherit;
+      line-height: $header_height;
+      font-size: 12px;
+      text-decoration: none;
+
+      @include mq("lg") {
+        line-height: 1.5;
+        position: relative;
+        >span {
+          display: block;
+          text-transform: uppercase;
+          font-size: 22px;
+          font-weight: 700;
+        }
+      }
+
+      &:focus,
+      &:hover {
+        opacity: $opacity;
+        transition: opacity $transition;
+      }
+    }
+}
+
+
+.bl_drawer {
+  &_icon {
+    position: fixed;
+    top: 20px;
+    right: 16px;
+    z-index: map-get($layer, "drawer");
+    display: none;
+    transition: transform $transition ease 0s;
+
+    @include mq("sm") {
+      display: block;
+    }
+
+    &.is_active {
+      transform: translateX($drawer_icon_translateX);
+      .bl_drawer_iconBar1 {
+        transform: rotate(-45deg);
+        background: $drawer_iconBar_bg_is-active;
+        top: 8px;
+      }
+      
+      .bl_drawer_iconBar2 {
+        display: none;
+      }
+      
+      .bl_drawer_iconBar3 {
+        transform: rotate(45deg);
+        top: 8px;
+        background: $drawer_iconBar_bg_is-active;
+      }
+    }
+  }
+  
+  &_iconBars {
+    width: $drawer_icon_width;
+    height: $drawer_icon_height;
+    display: block;
+    position: relative;
+  }
+  
+  &_iconBar1,
+  &_iconBar2,
+  &_iconBar3 {
+    position: absolute;
+    width: $drawer_iconBar_width;
+    height: $drawer_iconBar_height;
+    background: $drawer_iconBar_bg;
+    border-radius: $drawer_iconBar_borderRadius;
+    top: 0;
+    left: 0;
+  }
+  
+  &_iconBar1 {
+    top: 0;
+  }
+  
+  &_iconBar2 {
+    top: 8px;
+  }
+  
+  &_iconBar3 {
+    top: 16px;
+  }
+  
+  &_cont {
+    width: $drawer_cont_width;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: $drawer_cont_bg;
+    z-index: map-get($layer, "drawer")-1;
+    transform: translateX(105%);
+    transition: transform 0.5s ease 0s;
+
+    &.is_active {
+      transform: translateX(0);
+    }
+    
+    
+    
+    &_items {
+      position: absolute;
+      top: 43%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    &_item {
+      a {
+        display: flex;
+        text-decoration: none;
+        color: #3E3E3E;
+        padding-bottom: 32px;
+        justify-content: center;
+        font-family: $ff-en;
+        @include fzRem(true,18,22);
+      }
+    }
+  }
+  
+  &_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($drawer_bg_color, $drawer_bg_opacity);
+    z-index: map-get($layer, "drawer")-2;
+    display: none;
+
+    &.is_active {
+      display: block;
+    }
+  }
+}

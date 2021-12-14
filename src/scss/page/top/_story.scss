@@ -1,0 +1,78 @@
+@use '../../global' as *;
+
+.bl_story {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: $color_white;
+  position: relative;
+  background-color: #000;
+  @include background(
+    $image: url(../img/toppage/story.png),
+    $size: 80%,
+    $position-x: left
+  );
+  @include mq("sm") {
+    @include background($image: url(../img/toppage/story.png));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(to right, rgba(22, 22, 22, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    @include mq("sm") {
+      width: 100%;
+    }
+  }
+
+  &_inner {
+    position: relative;
+    z-index: 1;
+    max-width: 810px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md") {
+      max-width: 690px;
+      padding-right: $pd_x_md;
+      padding-left: $pd_x_md;
+    }
+    @include mq("sm") {
+      max-width: 510px;
+      padding-right: $pd_x_sm;
+      padding-left: $pd_x_sm;
+    }
+  }
+
+  &_cont {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    @include mq("sm") {
+      display: block;
+    }
+  }
+
+  &_txt {
+    width: 320px;
+    @include fzRem($remove_halfReading: true, $size: 12, $height: 21);
+    margin-bottom: 30px;
+    @include mq("sm") {
+      width: 100%;
+    }
+  }
+
+  &_footer {
+    text-align: right;
+    >.el_btn {
+      padding: 10px 26px;
+    }
+    
+    @include mq("sm") {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use '../../global' as *;
+
+.bl_inquiry {
+  margin-top: 22px;
+
+  &_cont {
+    margin-top: 22px;
+    padding: 30px;
+    padding-bottom: 35px;
+    background: $bgMask;
+    color: $color_subTxt;
+  }
+
+  &_txt {
+    @include fzRem($size:18, $height:30);
+  }
+}
+
+.bl_inquiry .bl_form {
+  padding-top: 22px;
+
+  &_txt {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+    
+    @include mq("sm") {
+      display: block;
+      margin-bottom: 30px;
+    }
+    
+    dt {
+      // flex: 0 0 128px;
+      // flex-grow: 1;
+      margin-right: 19px;
+      // font-weight: bold;
+      @include mq("sm") {
+        width: 100%;
+        margin-bottom: 4px;
+      }
+    }
+    dd {
+      flex: 0 0 520px;
+    }
+  }
+  
+  [type="text"],
+  [type="email"],
+  [type="tel"],
+  textarea {
+    border: none;
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    @include mq("sm") {
+      padding: 0;
+    }
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid $cr_blue;
+    }
+  }
+
+  select {
+    width: auto;
+    padding-right: 2.3em;
+    @include mq("sm") {
+      min-width: 100%;
+    }
+  }
+
+  textarea {
+    &:focus,
+    &:hover {
+      border: 1px solid $cr_blue;
+      box-shadow: 0px 0px 8px rgba(73, 115, 255, 0.5);
+    }
+  }
+
+  &_submit {
+    text-align: center;
+    @include mq("sm") {
+      text-align: center;
+    }
+    
+    .el_btn {
+      @include fzRem($size:18, $height:22);
+      
+      &.-active {
+        background: $bgc_roundedBtn;
+      }
+    }
+  }
+}
+
+.bl_inquiry_massage {
+  text-align: center;
+  @include fzRem($size:18, $height:30);
+  display: none;
+
+  &.-error {
+    color: #f00;
+  }
+}

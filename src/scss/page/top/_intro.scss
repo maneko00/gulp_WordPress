@@ -1,0 +1,81 @@
+@use '../../global' as *;
+
+.bl_intro {
+  background: $primary_bg;
+  position: relative;
+  &_bgMask {
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(255,255,255,0.29);
+  }
+  
+  &_imgWrapper {
+    position: absolute;  
+    
+    > img {
+      clip-path: polygon(0 0%,0% 100%, 100% 0%);
+      @include mq("sm") {
+        width: 100px;
+      }
+    }
+  }
+  
+  &_cont {
+    padding: 30px;
+    padding-top: 40px;
+  }
+
+  &_lead {
+    text-align: center;
+    margin-top: 20px;
+    @include fzRem(true,34,34);
+    padding-bottom: 30px;
+    @include mq("md") {
+      @include fzRem($remove_halfReading:true, $size:28, $height:28);
+    }
+    @include mq("sm") {
+      @include fzRem($remove_halfReading:true, $size:24, $height:24);
+    }
+  }
+
+  
+  &_txt {
+    display: flex;
+    @include fzRem($remove_halfReading: true, $size: 12, $height: 21);
+    @include mq("sm") {
+      display: block;
+    }
+    
+    &LR{
+      width: calc(100%/2 - 30px * (2 - 1) / 2);
+      margin-right: 30px;
+
+      @include mq("sm") {
+       width: 100%; 
+      }
+    }
+
+    & > :nth-child(2) {
+      margin-right: 0;
+    }
+
+  }
+
+  
+}
+
+.bl_iframeWrapper {
+  width: 100%;
+  padding-top: division(400, 800);
+  position: relative;
+
+  > iframe {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}

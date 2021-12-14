@@ -1,0 +1,122 @@
+@use '../../global' as *;
+
+.bl_newsArchive {
+  position: relative;
+  // padding-bottom: 62px;
+
+  .bl_cardUnit {
+    @include unit_col (3,30,30);
+    padding-top: 30px;
+  }
+  
+  a.bl_card {
+    display: block;
+    color: currentColor;
+    transition: $opacity $transition ease 0s;
+    text-decoration: none;
+    
+    &:focus,
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+  
+  .bl_card {
+    background: #fff;
+    border-radius: 4px;
+    
+    &_imgWrapper {
+      position: relative;
+      padding-top: 56.25%;
+      overflow: hidden;
+      
+      > img {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%) scale(1.12);
+      }
+    }
+    
+    &_body {
+      padding: 15px;
+    }
+
+    &_date {
+      color: #666;
+      @include fzRem($remove_halfReading: true, $size: 12, $height: 21);
+    }
+    
+    &_ttl {
+      @include fzRem($remove_halfReading: true, $size: 16, $height: 21);
+      color: #333;
+    }
+    
+  }
+  
+}
+
+.bl_news_footer {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  >.el_btn {
+    padding: 10px 20px;
+  }
+
+  @include mq("sm") {
+    position: static;
+    text-align: center;
+    padding-top: 30px;
+  }
+}
+
+/////////////////////////////
+// pager
+/////////////////////////////
+
+.bl_pager {
+  margin-top: 30px;
+  display: flex;
+  overflow-x: auto;
+
+  &_inner {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+
+    > *:last-child {
+      margin-right: 0;
+    }
+
+    > li {
+      margin-right: 9px;
+    }
+  }
+
+  &_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border: 2px solid #1A1A1A;
+    color: #F4D102;
+    background-color: #1A1A1A;
+    text-decoration: none;
+    transition: $transition;
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+      color: #1A1A1A;
+      opacity: $opacity;
+    }
+    
+    &.is_active{
+      background-color: transparent;
+      color: #1A1A1A;
+      pointer-events: none;
+    }
+  }
+}

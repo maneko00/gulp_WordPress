@@ -1,0 +1,87 @@
+@use '../../global' as *;
+
+.bl_jumbotron {
+  @include background($image:url(../img/mv.png),$size:150%);//mixinを使用 $sizeを省略するとcoverになる
+  background-position: 90% 63%;
+  @include mq("sm") {
+    @include background($image:url(../img/mv.png));//mixinを使用 $sizeを省略するとcoverになる
+  }
+  position: relative;
+
+  &_inner {
+    max-width: 920px;
+    height: inherit;
+    padding-right: $pd_x_lg;
+    padding-left: $pd_x_lg;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+    @include mq("md") {
+      max-width: 690px;
+      padding-right: $pd_x_md;
+      padding-left: $pd_x_md;
+    }
+    @include mq("sm") {
+      max-width: 510px;
+      padding-right: $pd_x_sm;
+      padding-left: $pd_x_sm;
+    }
+  }
+  &_cont {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    height: inherit;
+    position: relative;
+    
+    > .el_btn {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateY(50%);
+    }
+    @include mq("md") {
+      // max-width: 600px;
+      
+    }
+    color: #fff;
+      
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+    
+    &_lead {
+      padding-bottom: 20px;
+    }
+
+    &_ttl {
+      padding-bottom: 88px;
+
+      @include mq("sm") {
+        padding-bottom: 40px;
+      }
+    }
+
+  &_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include mq("sm") {
+      display: block;
+    }
+  }
+
+  &_info {
+    flex:0 0 41.6%;
+    @include mq("sm") {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+  
+  &_txt {
+    flex:0 0 41.6%;
+    @include fzRem(false,14,22);
+  }
+}

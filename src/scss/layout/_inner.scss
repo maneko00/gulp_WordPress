@@ -1,0 +1,19 @@
+@use '../global' as *;
+
+.ly_inner {
+	max-width: $ly_width_inner;
+	padding-right: $pd_x_lg;
+	padding-left: $pd_x_lg;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: content-box;
+	
+	@include mq("sm") {
+		padding-right: $pd_x_sm;
+		padding-left: $pd_x_sm;
+	}
+
+	&.ly_inner__s {
+		max-width: 960px;
+	}
+}

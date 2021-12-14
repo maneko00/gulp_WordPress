@@ -1,0 +1,87 @@
+@use '../../global' as *;
+
+.bl_comments {
+  &_lead {
+    text-align: center;
+    @include fzRem($remove_halfReading:true, $size:24);
+    margin-top: 26px;
+    margin-bottom: 30px;
+    @include mq("sm") {
+      @include fzRem($size:18);
+    }
+  }
+
+  .bl_media {
+    @include background(
+      $image: url(../img/toppage/comments.png)
+    ); //mixinを使用 $sizeを省略するとcoverになる
+    background-position: 90% 63%;
+
+    @include mq("sm") {
+      display: block;
+    }
+
+    &_imgWrapper {
+      display: none;
+
+      @include mq("sm") {
+        display: block;
+      }
+      > img {
+        width: 100%;
+      }
+    }
+
+    &_body {
+      color: $color_white;
+      padding-top: 45px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      padding-left: 30px;
+
+      @include mq("sm") {
+        background-color: #000;
+        padding-top: 15px;
+      }
+
+      //   > *:last-child {
+      //     margin-bottom: 0;
+      //   }
+    }
+
+    &_ttl {
+      margin-bottom: 15px;
+      @include fzRem(true, 20);
+      @include mq("sm") {
+        @include fzRem($size:18);
+      }
+      .large {
+        @include fzRem(true, 26);
+        @include mq("sm") {
+          display: block;
+          @include fzRem($size:22);
+        }
+      }
+    }
+
+    &_txt {
+      width: 420px;
+      @include fzRem($remove_halfReading:true, $size:14, $height:22);
+      margin-bottom: 20px;
+      @include mq("sm") {
+        max-width: 100%;
+      }
+    }
+
+    &_more {
+      text-align: right;
+      >.el_btn {
+        padding: 10px 30px;
+      }
+      
+      @include mq("sm") {
+        text-align: center;
+      }
+    }
+  }
+}

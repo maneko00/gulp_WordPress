@@ -1,0 +1,51 @@
+@use '../global' as *;
+
+.ly_footer {
+	z-index: map-get($layer, "footer");
+  background-color: $bgc_footer;
+	color: $cr_footer;
+	padding-top: 57px;
+	padding-bottom: 60px;
+	width: 100%;
+
+	@include mq("sm") {
+		padding-bottom: 57px;
+	}
+}
+#footer {
+  background: $primary_bg;
+  
+  >.ly_inner {
+    max-width: 810px;
+    padding-right: $pd_x_lg;
+    padding-left: $pd_x_lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.ly_footer_inner {
+	max-width: 960px;
+	padding-left: $pd_x_lg;
+	padding-right: $pd_x_lg;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: content-box; //1280px
+
+	@include mq("sm") {
+		padding-right: $pd_x_sm;
+		padding-left: $pd_x_sm;
+	}
+}
+
+
+
+// 固定
+.ly_footer__fixed {
+	z-index: map-get($layer, "footer");
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+}

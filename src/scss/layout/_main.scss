@@ -1,0 +1,62 @@
+@use '../global' as *;
+
+#primary {
+  background: $primary_bg;
+  
+  >.ly_inner {
+    max-width: 810px;
+    padding-right: $pd_x_lg;
+    padding-left: $pd_x_lg;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
+    // height: 100px;
+    // box-sizing: content-box;
+    @include mq("md") {
+      max-width: 690px;
+      padding-right: $pd_x_md;
+      padding-left: $pd_x_md;
+    }
+    @include mq("sm") {
+        max-width: 510px;
+          padding-right: $pd_x_sm;
+          padding-left: $pd_x_sm;
+        }
+  }
+}
+//お試し
+section > * + [class^="el_"] {
+  margin-top: 40px;
+}
+section > * + [class^="bl_"] {
+  margin-top: 80px;
+}
+
+// .ly_main {
+//   padding-top: 120px;
+//   position: relative;
+
+//   @include mq("sm") {
+//     padding-top: 0px;
+//     margin-top: -40px;
+//   }
+// }
+
+.ly_bgWrapper {
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    background: #3e3e3e;
+    top: 146px;
+    left: 0;
+    bottom: 259px;
+    width: 980 / 1280 * 100%;
+    @include mq("sm") {
+      top: 55px;
+      bottom: 0;
+      width: 100%;      
+    }
+  }
+}

@@ -1,0 +1,195 @@
+@use '../../global' as *;
+
+.cast.bl_cast {
+  margin-top: 60px;
+  padding-bottom: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent 185px,
+    $color_bg 185px 100%
+  );
+  @include mq("sm") {
+    background: linear-gradient(
+      to bottom,
+      transparent 180px,
+      $color_bg 180px 100%
+    );
+  }
+}
+
+.ly_inner {
+  max-width: 810px;
+  padding-right: $pd_x_lg;
+  padding-left: $pd_x_lg;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq("md") {
+    max-width: 690px;
+    padding-right: $pd_x_md;
+    padding-left: $pd_x_md;
+  }
+  @include mq("sm") {
+    max-width: 510px;
+    padding-right: $pd_x_sm;
+    padding-left: $pd_x_sm;
+  }
+}
+
+.cast.bl_cast .bl_bulletList {
+  &Wrapper {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  display: flex;
+  @include bulletList_margin($bottom: 0, $right: 30);
+  @include mq("sm") {
+    display: block;
+    @include bulletList_margin(38, 0);
+  }
+  > li {
+    width: calc(100% / 3 - 30px * (3 - 1) / 3);
+    @include mq("sm") {
+      width: 100%;
+    }
+  }
+
+  &_imgWrapper {
+    margin-right: auto;
+    margin-left: auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 38px;
+
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include mq("sm") {
+      margin-bottom: 12px;
+    }
+  }
+
+  &_ttl {
+    text-align: center;
+    height: 90px;
+    @include fzRem(true, 16, 30, 600);
+    > span {
+      @include fzRem(true, 18, 30, 600);
+    }
+    > span.small {
+      @include fzRem(true, 12, 30, 600);
+    }
+    margin-bottom: 20px;
+    @include mq("sm") {
+      @include fz(20, 24, 600, 4);
+    }
+  }
+  &_txt {
+    @include fzRem(true, 12, 21);
+  }
+}
+
+.bl_bulletList.info {
+  @include unit_col($col:2, $right:30, $bottom:30);
+  margin-bottom: 25px;
+  
+  .bl_cast_imgWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 129px;
+    height: 129px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    @include mq("sm") {
+      margin-bottom: 20px;
+    }
+    
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  > li {
+    @include ly_flex_center(129px);
+  }
+
+  .bl_bulletList {
+    &_castName {
+      color: #1A1A1A;
+
+      @include mq("sm") {
+        text-align: center;
+      }
+    }
+
+    &_type {
+      @include fzRem($size:16.92, $height:29.6);
+      margin-bottom: 8px;
+    }
+    &_name {
+      @include fzRem($size:22.56, $height:29.6);
+      margin-bottom: 15px;
+    }
+    &_sub {
+      @include fzRem($size:12, $height:29.6);
+      margin-bottom: 20px;
+    }
+    &_prof {
+      @include fzRem($size:12, $height:21);
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+  }
+}
+
+.ly_bg {
+  background: linear-gradient(
+    to bottom,
+    transparent 0px,
+    $color_bg 0px 100%
+    );
+}
+
+.cast.bl_bulletList {
+  @include unit_col($col:3, $right:30, $bottom:30);
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+  >li {
+    text-align: center;
+  }
+
+  .bl_bulletList {
+    &_type {
+      @include fzRem($size:16.92, $height:29.6);
+      color: #666;
+      margin-bottom: 5px;
+    }
+    
+    &_name {
+      color: $color_subTxt;
+      @include fzRem($size:22.56, $height:29.6);
+      margin-bottom: 20px;
+    }
+
+    &_sub {
+      @include fzRem($size:12, $height:29.6);
+    }
+
+  }
+
+  }
+  
